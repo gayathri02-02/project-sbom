@@ -23,7 +23,7 @@ jobs:
           python-version: '3.12'
 
       - name: Generate summary reports
-        run: python3 scripts/generate_summary.py sbom reports
+        run: python3 scripts/generate_summary.py Sbom reports
 
       - name: Commit and push reports
         run: |
