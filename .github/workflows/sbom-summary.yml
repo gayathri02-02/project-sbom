@@ -23,8 +23,11 @@ jobs:
           python-version: '3.12'
 
       - name: Generate summary reports
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 scripts/generate_summary.py Sbom reports
 
+        
       - name: Commit and push reports
         run: |
           git config user.name "github-actions[bot]"
