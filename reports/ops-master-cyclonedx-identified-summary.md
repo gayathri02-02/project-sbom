@@ -2,14 +2,14 @@
 
 - **Source file:** `ops-master-cyclonedx-identified.json`
 - **Scan timestamp:** 2026-07-13T04:54:23.175Z
-- **Report generated:** 2026-07-17T08:17:07.282707+00:00
+- **Report generated:** 2026-07-17T11:18:04.108227+00:00
 - **Total component entries:** 932
 - **Unique package names:** 363
 - **Vulnerability data present:** No
 
 ## Overview
 
-This SBOM for ops-master catalogs 932 component entries across 363 unique package names, overwhelmingly dominated by the Go ecosystem (921 golang packages, with only a handful of github, npm, and maven entries rounding out the mix). The license landscape is largely permissive and low-risk—BSD-3-Clause, Apache-2.0, and MIT together account for the vast majority of entries—though a long tail of one-off licenses (GooglePatentClause, UPL-1.0, CC-BY-SA-4.0, CC0-1.0) warrants a quick manual check to confirm none introduce unexpected obligations. Version sprawl is notable: several core Go dependencies (golang.org/x/sys, golang.org/x/tools, golang.org/x/net, google.golang.org/genproto, and others) each carry dozens of pseudo-versioned historical entries, suggesting the SBOM reflects accumulated transitive resolution history rather than a clean, deduplicated dependency tree—this is worth normalizing before drawing conclusions about actual runtime versions in use. Finally, no vulnerability data is present in this SBOM, so this report should not be read as a security assessment; a separate vulnerability scan against these resolved packages is recommended before any risk sign-off.
+This SBOM for ops-master catalogs 932 component entries spanning 363 unique package names, and the footprint is overwhelmingly Go-centric: 921 of 932 entries come from the golang ecosystem, with only a handful of github, npm, and maven packages rounding things out. The license mix is largely permissive and low-risk, dominated by BSD-3-Clause, Apache-2.0, and MIT (together covering the vast majority of entries), with a long tail of single-instance licenses like GooglePatentClause, UPL-1.0, and CC-BY-SA-4.0 that are worth a quick look but unlikely to pose material concern. Version sprawl is notable and worth flagging for cleanup: core transitive dependencies such as golang.org/x/sys, golang.org/x/tools, golang.org/x/net, and google.golang.org/genproto each appear pinned across dozens of distinct pseudo-versions, suggesting inconsistent dependency resolution or vendoring drift across the codebase rather than deliberate multi-version support. Finally, no vulnerability scan data is included in this SBOM, so this report should not be read as a security assessment — a follow-up scan against a vulnerability database is recommended before drawing conclusions about risk exposure.
 
 ## Ecosystem Breakdown
 
