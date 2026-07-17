@@ -2,10 +2,14 @@
 
 - **Source file:** `AuditCodebase4-cyclonedx-identified.json`
 - **Scan timestamp:** 2026-07-15T06:03:10.121Z
-- **Report generated:** 2026-07-17T05:13:14.367030+00:00
+- **Report generated:** 2026-07-17T08:16:56.141356+00:00
 - **Total component entries:** 41
 - **Unique package names:** 34
 - **Vulnerability data present:** No
+
+## Overview
+
+This audit of AuditCodebase4 catalogs 41 component entries spanning 34 unique packages, with the footprint dominated by GitHub-sourced dependencies (25 entries across github and github.com identifiers) alongside smaller contributions from Maven, npm, NuGet, PyPI, and a handful of other ecosystems. The license mix is worth a closer look rather than a rubber stamp: while MIT (20) and Apache-2.0 (8) account for the bulk of entries and are low-friction, the presence of copyleft licenses—AGPL-3.0 in multiple variants (7 + 6 + 2) alongside GPL-2.0 and GPL-3.0 entries—introduces obligations that should be reconciled against how this codebase is distributed or offered as a service. A few packages, notably servicestack/servicestack, malihu-custom-scrollbar-plugin, and pandas, appear pinned to multiple historical versions simultaneously, which suggests some version sprawl that could complicate dependency management and should be reviewed for consolidation. Finally, no vulnerability data is present in this SBOM, so the security posture of these components remains unverified and should be treated as an open item requiring a separate scan before this inventory can be considered a complete risk picture.
 
 ## Ecosystem Breakdown
 
